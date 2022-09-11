@@ -10,9 +10,9 @@ import java.util
 import scala.language.postfixOps
 
 abstract class AbstractTarantoolDialect extends SqlLanguageDialectEx(tarantool) {
-  override def getTypeSystem: SqlTypeSystemBase                             = TarantoolTypeSystem.INSTANCE
+//  override def getTypeSystem: SqlTypeSystemBase                             = TarantoolTypeSystem.INSTANCE
   override def getSupportedFunctions: SqlLanguageDialectEx.BuiltinFunctions = sql92 getSupportedFunctions
-  override def getDbms: Dbms                                                = DbmsHolder DBMS
+  override def getDbms: Dbms                                                = DbmsHolder.DBMS
   override def isReservedKeyword(iElementType: IElementType): Boolean       = sql92 isReservedKeyword iElementType
   override def isOperatorSupported(iElementType: IElementType): Boolean     = sql92 isOperatorSupported iElementType
   override def getKeywords: util.Set[String]                                = sql92 getKeywords

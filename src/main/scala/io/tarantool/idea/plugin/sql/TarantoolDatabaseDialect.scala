@@ -26,17 +26,17 @@ class TarantoolDatabaseDialect(private val _dbms: Dbms) extends AbstractDatabase
 
   override def supportsEmptyTables(): Boolean = false
 
-  override def supportsViewDefinition(): Boolean = false
+  def supportsViewDefinition(): Boolean = false
 
-  override def supportsProcedureDefinition(): Boolean = false
+  def supportsProcedureDefinition(): Boolean = false
 
   override def supportsCommonTableExpression(): Boolean = false
 
   override def similarTo(dialect: DatabaseDialect): Boolean = dialect.isInstanceOf[TarantoolDatabaseDialect]
 
-  override def sqlViewDefinition(dasObject: DasObject): Pair[String, DbImplUtilCore.ConcatenationProps] = ???
+  def sqlViewDefinition(dasObject: DasObject): Pair[String, DbImplUtilCore.ConcatenationProps] = ???
 
-  override def sqlProcedureDefinition(dasRoutine: DasRoutine): Pair[String, DbImplUtilCore.ConcatenationProps] = ???
+  def sqlProcedureDefinition(dasRoutine: DasRoutine): Pair[String, DbImplUtilCore.ConcatenationProps] = ???
 
   override def sqlDropSequence(ddlBuilder: DdlBuilder, dasObject: DasObject, b: Boolean): DdlBuilder = ???
 }
